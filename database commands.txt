@@ -1,0 +1,14 @@
+create database webapp;
+create table patient_details(name varchar(100), username varchar(700) PRIMARY KEY, phone varchar(400), email varchar(500), age number, password BLOB);
+create table doctor_details(doctor_id varchar(400) PRIMARY KEY,firstname varchar(400),lastname varchar(400),username varchar(400),email varchar(400),password BLOB,specialism varchar(400),gender varchar(400),address varchar(700),country varchar(400),city varchar(400),state varchar(400),pincode varchar(400),phone varchar(400),profile_pic varchar(400),bio varchar(10000));
+create table pat_hash (pat_email varchar(400),pat_salt_key BLOB);
+create table doc_hash (doc_email varchar(400), doc_salt_key BLOB);
+create table patient_rec(pat_username varchar(400),doc_username varchar(400),date varchar(400),prescription varchar(400),prescription_for_doc varchar(400),prescription_name varchar(400),prescription_for_doc_name varchar(400));
+create table appointment_details(app_id varchar(400), patient_name varchar(400),age varchar(200), date varchar(400),doctor_id varchar(400), attend varchar(100) ) ;
+create table doctor_patient_relation(doctor_name	varchar(400),patient_username	varchar(400),category	varchar(400),date	varchar(400),status	varchar(500));
+select * from patient_details;
+select * from doctor_details;
+select * from pat_hash;
+select * from doc_hash;
+select * from patient_rec;
+select * from appointment_details;
