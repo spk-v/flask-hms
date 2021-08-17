@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+      .btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 6px 15px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+.page-wrapper {
+	left: 0;
+	margin-left: 0px;
+	padding-top: 0px;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.page-wrapper > .content {
+	padding: 0px;
+}
+.page-title {
+	color: #565656;
+	font-size: 21px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+.page-title {
+		font-size: 18px;
+	}
+    .page-title {
+		font-size: 1.2em;
+		padding-top: 10px;
+	}
+  </style>
+  <script>
+          function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  
+  
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+  
+}
+  </script>
+    </head>
+    <body>
+      <nav class="navbar navbar-light bg-light justify-content-between ">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+        <a class="navbar-brand space">Smart Hosp</a>
+        <form class="form-inline " method="post" >
+            
+          
+          <button class="btn btn-outline-secondary " style="margin-right: 30px;" name="logout" value="logout" type="submit">Logout</button>
+        </form>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{{url_for('patient_dashboard')}}">DashBoard</a>
+        <a href="{{url_for('view_doc')}}">View Doctors</a>
+        <a href="#"></a>
+        <a href="#"></a>
+      </div>
+      
+          <!-- Use any element to open the sidenav -->
+          
+        <div id="main">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-4 col-3">
+                        <h4 class="page-title">Documents</h4>
+                    </div>
+                </div>
+                </div>
+            <form method="post">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  
+                  <th>Name of the file</th>
+                  
+                  <th>file </th>
+                </tr>
+              </thead>
+              <tbody>
+
+              {% for i in range(0,record|length): %}
+                <tr>
+                  <td>{{record[i]}}</td>
+                  <td><button type="submit" class="btn" name="open" value="{{record[i]}}"><i class="fa fa-download"></i> Open</button></td>
+                </tr>
+              {% endfor %}
+
+              </tbody>
+            </table>
+                </form>
+            </div>
+            </div>
+    </body>
+</html>

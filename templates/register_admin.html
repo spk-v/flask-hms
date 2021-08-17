@@ -1,0 +1,53 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Register</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <script type="text/javascript">
+
+                function switchVisiblepass()
+                {
+                    if(document.getElementById('submitotp') && document.getElementById('verify').value!='')
+                    {
+                        document.getElementById('div21').style.display = 'none';
+                        document.getElementById('div31').style.display = 'block';
+                    }
+                }       
+        </script>
+    </head>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <div class="fadeIn first">
+                    <img src="{{url_for('static', filename='/images/admin.png')}}" id="icon" alt="User Icon" class="img-responsive img-rounded"style="max-height: 100px; max-width: 75px;"/>
+                </div>  
+                <form action="" method="post">
+                    <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name" value="{{name}}">
+                    <input type="text" id="username" class="fadeIn second" name="username" placeholder="UserName" value="{{uname}}">
+                    <input type="text" id="phone" class="fadeIn second" name="c" placeholder="Mobile" value="{{mob}}">
+                    <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email" value="{{email}}">
+                    
+                    <div id="div213">
+                        <input type="submit" class="fadeIn fourth" value="Send Otp" id="showotp" style="display:{{visible}}" name="send_otp">
+                    </div>
+                    <div id="div21"class="div2" style="display:{{visible1}}">
+                        <input type="text" name="login" id="verify" placeholder="Enter OTP">
+                        <input type="submit" class="fadeIn fourth" value="Submit Otp" id="submitotp" >
+                        <a class="underlineHover fadeIn fourth" href="#">ReSend OTP</a>
+                    </div>
+                    <div id="div31"class="div2">
+                        <input type="password" name="password" class="fadeIn fourth" placeholder="Password">
+                        <input type="password" name="confirmpassword" class="fadeIn fourth" placeholder="Confirm Password">
+                        <button type="submit" class="fadeIn fourth" value="Submit" id="submit" >Submit</button>
+                    </div>
+                    <div id="formFooter">
+                        <a class="underlineHover" href="./login_admin.html">Login</a>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+

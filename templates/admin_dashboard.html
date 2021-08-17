@@ -1,0 +1,481 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script>
+    function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  
+  
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+  
+}
+window.onload = function () {
+console.log({{months[0]}});
+var chart = new CanvasJS.Chart("chartContainer", {
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		 text: "Patient Total"
+	},
+	axisY: {
+		title: "COUNT"
+	},
+
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "PATIENTS TOTAL IN MONTHS",
+		dataPoints: [
+
+			{ y: {{months[0]}}, label: "JAN" },
+			{ y: {{months[1]}},  label: "FEB" },
+			{ y: {{months[2]}},  label: "MAR" },
+			{ y: {{months[3]}},  label: "APR" },
+			{ y: {{months[4]}},  label: "MAY" },
+			{ y: {{months[5]}}, label: "JUNE" },
+			{ y: {{months[6]}},  label: "JULY" },
+			{ y: {{months[7]}},  label: "AUG" },
+			{ y: {{months[8]}},  label: "SEPT" },
+			{ y: {{months[9]}},  label: "OCT" },
+			{ y: {{months[10]}}, label: "NOV" },
+			{ y: {{months[11]}},  label: "DEC" }
+
+		]
+	}]
+
+});
+chart.render();
+
+var chart = new CanvasJS.Chart("chartContainer1", {
+	animationEnabled: true,
+	theme: "light1", // "light1", "light2", "dark1", "dark2"
+	title:{
+		 text: "Patients In"
+	},
+	axisY: {
+		title: "COUNT"
+	},
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "PATIENT'S IN IN WEEKS",
+		dataPoints: [      
+			{ y: {{weeks[0]}}, label: "MON" },
+			{ y: {{weeks[1]}},  label: "TUES" },
+			{ y: {{weeks[2]}},  label: "WED" },
+			{ y: {{weeks[3]}},  label: "THURS" },
+			{ y: {{weeks[4]}},  label: "FRI" },
+			{ y: {{weeks[5]}}, label: "SAT" },
+			{ y: {{weeks[6]}},  label: "SUN" },
+
+
+		]
+	}]
+});
+chart.render();
+
+}
+
+</script>
+<style>
+    .dash-widget {
+	background-color: #fff;
+	border-radius: 4px;
+	margin-bottom: 30px;
+	padding: 20px;
+	position: relative;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.dash-widget-bg1 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
+	background: #009efb;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-bg2 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
+	background: #55ce63;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-bg3 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
+	background: #7a92a3;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-bg4 {
+	width: 65px;
+	float: left;
+	color: #fff;
+	display: block;
+	font-size: 50px;
+	text-align: center;
+	line-height: 65px;
+	background: #ffbc35;
+	border-radius: 50%;
+	font-size: 40px;
+	height: 65px;
+}
+.dash-widget-info > span.widget-title1 {
+	background: #009efb;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > span.widget-title2 {
+	background: #55ce63;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > span.widget-title3 {
+	background: #7a92a3;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > span.widget-title4 {
+	background: #ffbc35;
+	color: #fff;
+	padding: 5px 10px;
+	border-radius: 4px;
+	font-size: 13px;
+}
+.dash-widget-info > h3 {
+	font-size: 24px;
+	font-weight: 500;
+	margin-bottom: 0.5rem;
+}
+.dash-widget-info span i {
+	width: 16px;
+	background: #fff;
+	border-radius: 50%;
+	color: #666666;
+	font-size: 9px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	margin-left: 5px;
+}
+.fa{
+    margin-top: 10px;
+}
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: absolute; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+.bar-chart {
+	position: relative;
+	width: 100%;
+	margin-top: 15px;
+}
+.bar-chart > .legend {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	margin-bottom: -45px;
+	border-top: 1px solid #000;
+}
+.bar-chart > .legend > .item {
+	position: relative;
+	display: inline-block;
+	float:left;
+	width: 25%;
+}
+.bar-chart > .legend > .item:before {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: '';
+	width: 1px;
+	height: 8px;
+	background-color: #000;
+	margin-top: -8px;
+}
+.bar-chart > .legend > .item.text-right:before {
+	right: 0;
+	left: auto;
+}
+.bar-chart > .legend > .item h4 {
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding-top: 5px;
+}
+.bar-chart > .chart {
+	position: relative;
+	width: 100%;
+}
+.bar-chart > .chart > .item {
+	position: relative;
+	width: 100%;
+	height: 40px;
+	margin-bottom: 10px;
+	color: #fff;
+	text-transform: uppercase;
+}
+.bar-chart > .chart > .item > .bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #ffbc35;
+	z-index: 5;
+}
+.bar-chart > .chart > .item > .bar > .percent {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 12px;
+	z-index: 15;
+}
+.bar-chart > .chart > .item > .bar > .item-progress {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background-color: #009efb;
+	z-index: 10;
+}
+.bar-chart > .chart > .item > .bar > .item-progress > .title {
+	display: block;
+	position: absolute;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 12px;
+	letter-spacing: 2px;
+	z-index: 15;
+}
+.hospital-barchart h4 {
+	display: inline-block;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 20px;
+	margin: 0;
+	color: #333;
+}
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.space
+{
+    margin-left: 30px;
+}
+
+</style>
+    </head>
+    <body>
+		<nav class="navbar navbar-light bg-light justify-content-between ">
+			<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+			
+            <a class="navbar-brand space">Smart Hosp</a>
+            <form class="form-inline " method="post">
+                
+              
+              <button class="btn btn-outline-secondary " style="margin-right: 30px;" type="submit" name="logout" value="logout">Logout</button>
+            </form>
+        
+        
+        
+        </nav>  
+          <!-- Use any element to open the sidenav -->
+		  <div id="mySidenav" class="sidenav">
+		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		  <a href="{{url_for('doctor_page')}}">Doctors</a>
+		  <a href="{{url_for('patient_page')}}">Patients</a>
+		  <a href="{{url_for('main')}}">Logout</a>
+		  <a href="#"></a>
+		</div>
+          
+          <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+          <div id="main">
+            
+          
+        <div class="content">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg1"><i class="fa fa-stethoscope" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>{{doctor}}</h3>
+                            <span class="widget-title1">Doctors <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg2"><i class="fa fa-user-o"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>{{patients}}</h3>
+                            <span class="widget-title2">Patients <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg3"><i class="fa fa-user-md" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>{{attended}}</h3>
+                            <span class="widget-title3">Attend <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                    <div class="dash-widget">
+                        <span class="dash-widget-bg4"><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
+                        <div class="dash-widget-info text-right">
+                            <h3>{{waiting}}</h3>
+                            <span class="widget-title4">Pending <i class="fa fa-check" aria-hidden="true"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-title">
+                                <h4>Patient Total</h4>
+                                <span class="float-right"><i class="fa fa-caret-up" aria-hidden="true"></i> 15% Higher than Last Month</span>
+                            </div>	
+                            <div id="chartContainer" style="height: 300px; width: 100%;" class="col-md-12 col-xs-9"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="chart-title">
+                                <h4>Patients In</h4>
+                                <div class="float-right">
+                                    <ul class="chat-user-total">
+                                        <li><i class="fa fa-circle current-users" aria-hidden="true"></i>ICU</li>
+                                        <li><i class="fa fa-circle old-users" aria-hidden="true"></i> OPD</li>
+                                    </ul>
+                                </div>
+                            </div>	
+                            <div id="chartContainer1" style="height: 300px; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>      
+                <div class="col-12 offset-sm-4 col-md-6 col-lg-4 col-xl-4 mt-5"  >
+                    <div class="hospital-barchart">
+                        <h4 class="card-title d-inline-block">Hospital Management</h4>
+                    </div>
+                    <div class="bar-chart">
+                        <div class="legend">
+                            <div class="item">
+                                <h4>Level1</h4>
+                            </div>
+                            
+                            <div class="item">
+                                <h4>Level2</h4>
+                            </div>
+                            <div class="item text-right">
+                                <h4>Level3</h4>
+                            </div>
+                            <div class="item text-right">
+                                <h4>Level4</h4>
+                            </div>
+                        </div>
+                        <div class="chart clearfix">
+                            {% for i in range(0, percent|length): %}
+                            <div class="item">
+                                <div class="bar">
+                                    <span class="percent">{{percent[i]}}%</span>
+                                    <div class="item-progress" data-percent="{{percent[i]}}">
+                                        <span class="title">{{dept[i]}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+            </div>
+    </body>
+</html>
+

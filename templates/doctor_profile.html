@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- profile22:59-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title></title>
+    <script>
+        function openNav() {
+ document.getElementById("mySidenav").style.width = "250px";
+ 
+ 
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+ document.getElementById("mySidenav").style.width = "0";
+ 
+ 
+}
+    </script>
+    
+    <!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.min.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+	<![endif]-->
+    <style>
+        .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+.page-wrapper {
+	left: 0;
+	margin-left: 0px;
+	padding-top: 0px;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.page-wrapper > .content {
+	padding: 0px;
+}
+.page-title {
+	color: #565656;
+	font-size: 21px;
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+.page-title {
+		font-size: 18px;
+	}
+    .page-title {
+		font-size: 1.2em;
+		padding-top: 10px;
+	}
+            .profile-upload {
+	display: flex;
+}
+.card-box.profile-header {
+	margin: 0;
+}
+.profile-details {
+	text-align: center;
+}
+.personal-info li .title {
+	color: #515365;
+	float: left;
+	font-weight: 500;
+	margin-right: 30px;
+	width: 30%;
+}
+.personal-info li .text {
+	color: #888da8;
+	display: block;
+	overflow: hidden;
+}
+.personal-info li {
+	margin-bottom: 10px;
+}
+.personal-info {
+	list-style: none;
+	margin-bottom: 0;
+	padding: 0;
+    margin-top: 95px;
+}
+.personal-info .text > a {
+	color: #009efb;
+}
+.profile-view .profile-img-wrap {
+	height: 150px;
+	width: 150px;
+}
+.profile-view .profile-img {
+	width: 150px;
+	height: 150px;
+}
+.profile-view .profile-img .avatar {
+	font-size: 24px;
+	height: 150px;
+	line-height: 150px;
+	margin: 0;
+	width: 150px;
+    border-radius: 50px;
+}
+.profile-view .profile-basic {
+	margin-left: 170px;
+}
+.staff-msg {
+	margin-top: 30px;
+}
+.experience-box {
+	position: relative;
+}
+.experience-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+.experience-list:before {
+	background: #ddd;
+	bottom: 0;
+	content: "";
+	left: 8px;
+	position: absolute;
+	top: 8px;
+	width: 2px;
+}
+.experience-list > li {
+	position: relative;
+}
+.experience-list > li:last-child .experience-content {
+	margin-bottom: 0;
+}
+.experience-user .avatar {
+	height: 32px;
+	line-height: 32px;
+	margin: 0;
+	width: 32px;
+}
+.experience-list > li .experience-user {
+	background: #fff;
+	height: 10px;
+	left: 4px;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 4px;
+	width: 10px;
+}
+.experience-list > li .experience-content {
+	background-color: #fff;
+	margin: 0 0 20px 40px;
+	padding: 0;
+	position: relative;
+}
+.experience-list > li .experience-content .timeline-content {
+	color: #9e9e9e;
+}
+.experience-list > li .experience-content .timeline-content a.name {
+	color: #616161;
+	font-weight: bold;
+}
+.experience-list > li .time {
+	color: #bdbdbd;
+	display: block;
+	font-size: 12px;
+	line-height: 1.35;
+}
+.before-circle {
+	background-color: #ddd;
+	border-radius: 50%;
+	height: 10px;
+	width: 10px;
+}
+.skills > span {
+	border: 1px solid #ccc;
+	border-radius: 500px;
+	display: block;
+	margin-bottom: 10px;
+	padding: 6px 12px;
+	text-align: center;
+}
+.profile-info-left {
+	border-right: 2px dashed #ccc;
+    margin-top: 100px;
+}
+.profile-tabs .nav-tabs {
+	background-color: #fff;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+.profile-view .profile-basic {
+		margin-left: 0;
+	}
+	.profile-img-wrap {
+		position: relative;
+		margin: 0 auto;
+	}
+	.profile-view .profile-img-wrap {
+		margin: 0 auto 10px;
+		height: 100px;
+		width: 100px;
+	}
+	.profile-view .profile-img {
+		height: 100px;
+		width: 100px;
+	}
+	.profile-view .profile-img .avatar {
+		font-size: 24px;
+		height: 100px;
+		line-height: 100px;
+		margin: 0;
+		width: 100px;
+	}
+    .profile-img-wrap {
+	height: 120px;
+	position: absolute;
+	width: 120px;
+	background: #fff;
+	overflow: hidden;
+}
+.profile-img-wrap img {
+	width: 120px;
+	height: 120px;
+}
+.profile-basic {
+	margin-left: 140px;
+}
+.user-name {
+	color: #333;
+}
+.staff-id {
+	margin-top: 5px;
+}
+.staff-msg {
+	margin-top: 30px;
+}
+.personal-info li .title {
+	color: #515365;
+	float: left;
+	font-weight: 500;
+	margin-right: 30px;
+	width: 30%;
+}
+.personal-info li .text {
+	color: #888da8;
+	display: block;
+	overflow: hidden;
+}
+.personal-info li {
+	margin-bottom: 10px;
+}
+.personal-info {
+	list-style: none;
+	margin-bottom: 0;
+	padding: 0;
+}
+.personal-info .text > a {
+	color: #009efb;
+}
+.tab-content {
+	padding-top: 20px;
+}
+    </style>
+
+</head>
+
+<body style="padding: 0px;">
+    
+    <nav class="navbar navbar-light bg-light justify-content-between ">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        
+        <a class="navbar-brand space">Smart Hosp</a>
+        <form class="form-inline " >
+            
+          
+          <button class="btn btn-outline-secondary " style="margin-right: 30px;" type="submit" name="logout" value="logout">Logout</button>
+        </form>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="{{url_for('doctor_dashboard')}}">Dashboard</a>
+       <a href="{{url_for('appointments')}}">Appointments</a>
+
+			<a href="{{url_for('doc_otp')}}">View Patients Record</a>
+			<a href="{{url_for('prescription_by_doctor')}}">Prescriptions</a>
+
+            
+      </div>
+
+      <!-- Use any element to open the sidenav -->
+      
+        <div class="page-wrapper" style="padding: 30px;">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-7 col-6">
+                        <h4 class="page-title">Doctor Profile</h4>
+                    </div>
+
+
+
+                </div>
+                <div class="card-box profile-header">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="profile-view">
+                                <div class="profile-img-wrap">
+                                    <div class="profile-img">
+                                        <a href="#"><img class="avatar" src="{{profile_pic}}" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="profile-basic">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="profile-info-left">
+                                                <h3 class="user-name m-t-0 mb-0">{{doc_fname}} {{doc_lname}}</h3>
+                                                <small class="text-muted">{{specialism}}</small>
+                                                <div class="staff-id">Employee ID : {{doc_id}}</div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <ul class="personal-info">
+                                                <li>
+                                                    <span class="title">Phone:</span>
+                                                    <span class="text"><a href="#">{{phone}}</a></span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Email:</span>
+                                                    <span class="text"><a href="#">{{email}}</a></span>
+                                                </li>
+
+                                                <li>
+                                                    <span class="title">Address:</span>
+                                                    <span class="text">{{address}}</span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">City:</span>
+                                                    <span class="text">{{city}}</span>
+                                                </li>
+                                                <li>
+                                                    <span class="title">Gender:</span>
+                                                    <span class="text">{{gender}}</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				<div class="profile-tabs">
+					<ul class="nav nav-tabs nav-tabs-bottom">
+						<li class="nav-item"><a class="nav-link active" href="#about-cont" data-toggle="tab">Biography</a></li>
+<!--						<li class="nav-item"><a class="nav-link" href="#bottom-tab2" data-toggle="tab">Achievements</a></li>-->
+						
+					</ul>
+
+					<div class="tab-content">
+						<div class="tab-pane show active" id="about-cont">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-box">
+                            <h3 class="card-title">Education Informations</h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">International College of Medical Science (UG)</a>
+                                                <div>MBBS</div>
+                                                <span class="time">2001 - 2003</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">International College of Medical Science (PG)</a>
+                                                <div>MD - Obstetrics & Gynaecology</div>
+                                                <span class="time">1997 - 2001</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-box mb-0">
+                            <h3 class="card-title">Experience</h3>
+                            <div class="experience-box">
+                                <ul class="experience-list">
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2014 - Present (4 years 8 months)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2009 - Present (6 years 1 month)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="experience-user">
+                                            <div class="before-circle"></div>
+                                        </div>
+                                        <div class="experience-content">
+                                            <div class="timeline-content">
+                                                <a href="#/" class="name">Consultant Gynecologist</a>
+                                                <span class="time">Jan 2004 - Present (5 years 2 months)</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+						</div>
+						<div class="tab-pane" id="bottom-tab2">
+							Tab content 2
+						</div>
+						<div class="tab-pane" id="bottom-tab3">
+							Tab content 3
+						</div>
+					</div>
+				</div>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    
+    <script src="{{url_for('static', filename='images/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/popper.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/select2.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/moment.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/bootstrap-datetimepicker.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/app.js')}}"></script>
+</body>
+
+
+<!-- profile23:03-->
+</html>

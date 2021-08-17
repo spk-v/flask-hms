@@ -1,0 +1,340 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+      function add(tableID) {
+
+var table = document.getElementById(tableID);
+
+var rowCount = table.rows.length;
+tabledata(rowCount-1);
+var row = table.insertRow(rowCount);
+tabname = "tabname"+rowCount;
+m = "m"+rowCount;
+n = "n"+rowCount;
+a = "a"+rowCount;
+dur = "dur"+rowCount;
+bf = "bf"+rowCount;
+af = "af"+rowCount;
+notes = "notes"+rowCount;
+var cell0 = row.insertCell(0);
+var element0 = document.createElement("input");
+element0.type = "text";
+element0.name = tabname;
+element0.id = tabname;
+cell0.appendChild(element0);
+var cell1 = row.insertCell(1);
+var element1 = document.createElement("input");
+element1.type = "checkbox";
+element1.name=m;
+element1.value="m";
+element1.id=m;
+cell1.appendChild(element1);
+var cell2 = row.insertCell(2);
+var element2 = document.createElement("input");
+element2.type = "checkbox";
+element2.name=a;
+element2.value="a";
+element2.id=a;
+cell2.appendChild(element2);
+var cell3= row.insertCell(3);
+var element3 = document.createElement("input");
+element3.type = "checkbox";
+element3.name=n;
+element3.value="n";
+element3.id=n;
+cell3.appendChild(element3);
+var cell4 = row.insertCell(4);
+var element4 = document.createElement("input");
+element4.type = "text";
+element4.name = dur;
+
+element4.id = dur;
+cell4.appendChild(element4);
+var cell5= row.insertCell(5);
+var element5 = document.createElement("input");
+element5.type = "checkbox";
+element5.name=bf;
+element5.value="bf";
+element5.id=bf;
+cell5.appendChild(element5);
+var cell6= row.insertCell(6);
+var element6 = document.createElement("input");
+element6.type = "checkbox";
+element6.name=af;
+element6.value="af";
+element6.id=af;
+cell6.appendChild(element6);
+var cell7 = row.insertCell(7);
+var element7 = document.createElement("input");
+element7.type = "text";
+element7.name = notes;
+
+element7.id = notes;
+cell7.appendChild(element7);
+
+}
+function add1(labtests)
+{
+    var table = document.getElementById(labtests);
+
+var rowCount = table.rows.length;
+tabledata1(rowCount-1);
+var row = table.insertRow(rowCount);
+nameoftest = "nameoftest"+rowCount;
+date = "date"+rowCount;
+var cell0 = row.insertCell(0);
+var element0 = document.createElement("input");
+element0.type = "text";
+element0.name = nameoftest;
+element0.id = nameoftest;
+cell0.appendChild(element0);
+var cell1 = row.insertCell(1);
+var element1 = document.createElement("input");
+element1.type = "text";
+element1.name = date;
+element1.id = date;
+cell1.appendChild(element1);
+
+
+}
+function tabledata1(count)
+{
+    var nameoftest = "nameoftest"+count;
+    var date = "date"+count;
+    var nameoftest1 = document.getElementById(nameoftest).value;
+    var date1 = document.getElementById(date).value;
+     console.log(nameoftest1);
+     console.log(date1);
+     document.getElementById('labtestname').value  =document.getElementById('labtestname').value+","+nameoftest1;
+       document.getElementById('labtestdate').value  =document.getElementById('labtestdate').value+","+date1;
+       console.log(document.getElementById('labtestname').value);
+       console.log(document.getElementById('labtestdate').value);
+}
+function tabledata(count)
+{
+    var tb= "tabname"+count;
+    var m = "m"+count;
+    var a = "a"+count;
+    var n = "n"+count;
+    var dur = "dur"+count;
+    var af= "af"+count;
+    var bf = "bf"+count;
+    var notes = "notes"+count;
+    var tabname1 = document.getElementById(tb).value;
+    var m1 = document.getElementById(m).value;
+    var m2 = document.getElementById(m).checked;
+    if(m2 == true)
+        m1 = "yes";
+    else
+        m1 = "no";
+
+    var a1 = document.getElementById(a).value;
+    var a2 = document.getElementById(a).checked;
+    if(a2 == true)
+        a1 = "yes";
+    else
+        a1 = "no";
+
+    var n1 = document.getElementById(n).value;
+    var n2 = document.getElementById(n).checked;
+    if(n2 == true)
+        n1 = "yes";
+    else
+        n1 = "no";
+
+    var dur1 = document.getElementById(dur).value;
+    var bf1 = document.getElementById(bf).value;
+    var bf2 = document.getElementById(bf).checked;
+    if(bf2 == true)
+        bf1 = "yes";
+    else
+        bf1 = "no";
+
+    var af1= document.getElementById(af).value;
+    var af2= document.getElementById(af).checked;
+    if(af2 == true)
+        af1 = "yes";
+    else
+        af1 = "no";
+
+    var notes1 = document.getElementById(notes).value;
+    console.log("tb "+tabname1+" m "+ m1 +" a "+ a1 + " n "+n1 + " dur "+dur1+" bf "+bf1+" af " +af1+" notes "+notes1);
+<!--    console.log("tb "+tabname1+" m "+ m1 +" a "+ a1 + " n "+n1 + " dur "+dur+" bf "+bf+" af " +af+" notes "+notes);-->
+
+    var tablet = document.getElementById('tablet').value;
+    var morn = document.getElementById('morn').value;
+    var afternoon = document.getElementById('afternoon').value;
+    var night = document.getElementById('night').value;
+    var duration = document.getElementById('duration').value;
+    var beforefood = document.getElementById('beforefood').value;
+    var afterfood = document.getElementById('afterfood').value;
+    var noted = document.getElementById('noted').value;
+    document.getElementById('tablet').value = tablet+","+tabname1;
+    document.getElementById('morn').value = morn +","+m1;
+    document.getElementById('afternoon').value = afternoon+","+a1;
+    document.getElementById('night').value = night +","+ n1;
+     document.getElementById('duration').value = duration+","+dur1;
+     document.getElementById('beforefood').value = beforefood+","+bf1;
+     document.getElementById('afterfood').value = afterfood+","+af1;
+     document.getElementById('noted').value = noted+","+notes1;
+}
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  
+  
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  
+  
+}
+  </script>
+  <style>
+          .sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+  </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between ">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            
+            <a class="navbar-brand space">Smart Hosp</a>
+            <form class="form-inline " >
+                
+              
+              <button class="btn btn-outline-secondary " style="margin-right: 30px;" type="submit">Logout</button>
+            </form>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{url_for('doctor_dashboard')}}">Dashboard</a>
+            <a href="{{url_for('appointments')}}">Appointments</a>
+            <a href="{{url_for('profile')}}">My Profile</a>
+			<a href="{{url_for('doc_otp')}}">View Patients Record</a>
+            <a href="{{url_for('prescription_by_doctor')}}">Prescriptions</a>
+             
+            <a href="#"></a>
+          </div>
+          
+          <!-- Use any element to open the sidenav -->
+          
+        <div id="main">
+        <form style="border: 10px; padding: 130px;" method="post" name="formdata">
+            <h1 class="text-center">Doctor's Details</h1>
+            <h2 class="text-right" >Patient's Details</h2>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table" id="tableID">
+                        <tr>
+                            <th>Tablet Name</th>
+                            <th> M</th>
+                            <th> A</th>
+                            <th> N</th>
+                            <th> Duration</th>
+                            <th> BF</th>
+                            <th> AF</th>
+                            <th> Notes</th>
+                        </tr>
+                        <tr>
+                            <div id="tableadd">
+                                <td><input type="text" name="tabname2" id="tabname2"> </td>
+                                <td><input type="checkbox" name="m2" id="m2" value="m"></td>
+                                <td><input type="checkbox" name="a2" id="a2" value="a"></td>
+                                <td><input type="checkbox" name="n2" id="n2" value="n"></td>
+                                <td><input type="text" name="dur2" id="dur2"> </td>
+                                <td><input type="checkbox" name="bf2" id="bf2" value="bf"></td>
+                                <td><input type="checkbox" name="af2" id="af2" value="af"></td>
+                                <td><input type="text" name="notes2" id="notes2"> </td>
+                            </div>
+                        </tr>
+                        <tr>
+                            <input type="button" onclick="add('tableID')" value="ADD">
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-striped custom-table" id="labtests">
+                        <tr>
+                            <th>Name of the Test to be taken</th>
+                            <th>Date</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="nameoftest2" id="nameoftest2"></td>
+                            <td><input type="text" name="date2" id="date2"></td>
+                        </tr>
+                        <tr>
+                            <input type="button" onclick="add1('labtests')" value="ADDTEST">
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <input type="submit" value="save Prescription" class="btn btn-primary ">
+            <br><br>
+            <input type="reset" value="Reset Prescription" class="btn btn-primary ">
+            <input type="hidden" id="tablet" name="tablet">
+    <input type="hidden" id="morn" name="morn">
+    <input type="hidden" id="afternoon" name="afternoon">
+    <input type="hidden" id="night" name="night">
+    <input type="hidden" id="duration" name="duration">
+        <input type="hidden" id="beforefood" name="beforefood">
+    <input type="hidden" id="afterfood" name="afterfood">
+    <input type="hidden" id="noted" name="noted">
+            <input type="hidden" name="labtestname" id="labtestname">
+            <input type="hidden" name="labtestdate" id="labtestdate">
+        </form>
+        </div>
+
+
+    </body>
+</html>

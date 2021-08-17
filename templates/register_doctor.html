@@ -1,0 +1,61 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Register</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="style.css">
+        <script type="text/javascript">
+            function switchVisibleotp() 
+                {
+                    
+                    if (document.getElementById('showotp') && document.getElementById('login').value!='' && document.getElementById('name').value!='' && document.getElementById('username').value!='' && document.getElementById('phone').value!='') {
+                        document.getElementById('div213').style.display = 'none';
+                        document.getElementById('div21').style.display = 'block';
+                    }
+                    
+                }   
+                function switchVisiblepass()
+                {
+                    if(document.getElementById('submitotp') && document.getElementById('verify').value!='')
+                    {
+                        document.getElementById('div21').style.display = 'none';
+                        document.getElementById('div31').style.display = 'block';
+                    }
+                }       
+        </script>
+    </head>
+    <body>
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <div class="fadeIn first">
+                    <img src="images/doctor.png" id="icon" alt="User Icon" class="img-responsive img-rounded"style="max-height: 100px; max-width: 75px;"/>
+                </div>  
+                <form action="./login_doctor.html">
+                    <input type="text" id="name" class="fadeIn second" name="name" placeholder="Name">
+                    <input type="text" id="username" class="fadeIn second" name="username" placeholder="UserName">
+                    <input type="text" id="phone" class="fadeIn second" name="phone" placeholder="Mobile">
+                    <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email">
+                    
+                    <div id="div213">
+                        <input type="button" class="fadeIn fourth" value="Send Otp" id="showotp" onclick="switchVisibleotp()">
+                    </div>
+                    <div id="div21"class="div2">
+                        <input type="text" name="login" id="verify" placeholder="Enter OTP">
+                        <input type="button" class="fadeIn fourth" value="Submit Otp" id="submitotp" onclick="switchVisiblepass()">
+                        <a class="underlineHover fadeIn fourth" href="#">ReSend OTP</a>
+                    </div>
+                    <div id="div31"class="div2">
+                        <input type="password" name="password" class="fadeIn fourth" placeholder="Password">
+                        <input type="password" name="confirmpassword" class="fadeIn fourth" placeholder="Confirm Password">
+                        <button type="submit" class="fadeIn fourth" value="Submit" id="submit" formaction="./index.html">Submit</button>
+                    </div>
+                    <div id="formFooter">
+                        <a class="underlineHover" href="./login_doctor.html">Login</a>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
+

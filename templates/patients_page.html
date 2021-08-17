@@ -1,0 +1,184 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            #main
+            {
+                padding: 20px;
+            }
+            .page-wrapper {
+	left: 0;
+	margin-left: 0px;
+	padding-top: 0px;
+	position: relative;
+	-webkit-transition: all 0.4s ease;
+	-moz-transition: all 0.4s ease;
+	transition: all 0.4s ease;
+}
+.page-wrapper > .content {
+	padding: 0px;
+}
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+        </style>
+        <script>
+            function openNav() {
+ document.getElementById("mySidenav").style.width = "250px";
+ 
+ 
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+ document.getElementById("mySidenav").style.width = "0";
+ 
+ 
+}
+       </script>
+    </head>
+    <body>
+        <nav class="navbar navbar-light bg-light justify-content-between ">
+            <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            
+            <a class="navbar-brand space">Smart Hosp</a>
+            <form class="form-inline " method="post">
+                
+              
+              <button class="btn btn-outline-secondary " style="margin-right: 30px;" type="submit" name="logout" value="logout">Logout</button>
+            </form>
+        </nav>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{{url_for('admin_dashboard')}}">Dashboard</a>
+            <a href="{{url_for('doctor_page')}}">doctors</a>
+            <a href="#"></a>
+            <a href="#"></a>
+          </div>
+        
+          
+          <!-- Use any element to open the sidenav -->
+          
+        <div id="main">
+            <div class="page-wrapper">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-sm-4 col-3">
+                            <h4 class="page-title">Patients</h4>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table class="table table-border table-striped custom-table datatable mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Age</th>
+
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th class="text-right">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <form method="post">
+                                    {% for i in range(0,name|length): %}
+                                        <tr>
+                                            <td><img width="28" height="28" src="static/images/img/user.jpg" class="rounded-circle m-r-5" alt="">
+                                                {{name[i]}}</td>
+                                            <td>{{age[i]}}</td>
+
+                                            <td>{{phone[i]}}</td>
+                                            <td>{{email[i]}}</td>
+                                            <td class="text-right">
+                                                <div class="dropdown dropdown-action">
+                                                    <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                    <div class="dropdown-menu dropdown-menu-right">
+
+                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_patient"><i class="fa fa-trash-o m-r-5"></i> Delete</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <div id="delete_patient" class="modal fade delete-modal" role="dialog">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <img src="static/images/img/sent.png" alt="" width="50" height="46">
+                            <h3>Are you sure want to delete this Patient?</h3>
+                            <div class="m-t-20"> <a href="#" class="btn btn-white" data-dismiss="modal">Close</a>
+                                <button type="submit" class="btn btn-danger" name="delete" value="{{email[i]}}">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+                                    {% endfor %}
+                                        </form>
+                                    </tbody>
+                                </table>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+
+
+        </div>
+     <script src="{{url_for('static', filename='images/js/jquery-3.2.1.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/popper.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/bootstrap.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/jquery.slimscroll.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/select2.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/moment.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/bootstrap-datetimepicker.min.js')}}"></script>
+        <script src="{{url_for('static', filename='images/js/app.js')}}"></script>
+    </body>
+</html>
